@@ -22,7 +22,7 @@ public class HelloController {
     @RequestMapping("hello")
     public String index(){
         System.out.println(a);
-        return "hello1 world";
+        return "hello1 world2";
     }
     @RequestMapping("hello2")
     public String greet(){
