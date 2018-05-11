@@ -16,8 +16,10 @@ public class HelloController {
     @Value("${abc}")
     private int a;
 
+    
     @Autowired
     private CounterService counterService;
+
 
     @RequestMapping("hello")
     public String index(){
