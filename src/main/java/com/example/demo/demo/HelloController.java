@@ -24,7 +24,7 @@ public class HelloController {
     @RequestMapping("hello")
     public String index(){
         System.out.println(a);
-        return "hello1 world2";
+        return "hello world";
     }
     @RequestMapping("hello2")
     public String greet(){
