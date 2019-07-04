@@ -1,11 +1,13 @@
 package com.example.demo.demo;
 
+import com.example.demo.User;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 
@@ -27,5 +29,13 @@ public class HelloController2 {
         ServiceInstance instance = client.getLocalServiceInstance();
         logger.info("/hello3,host:"+instance.getHost()+", service_id:"+instance.getServiceId());
         return "hello world3";
+    }
+    @RequestMapping(value = "hello4",method = RequestMethod.GET)
+    public User index(@RequestParam String name){
+        ServiceInstance instance = client.getLocalServiceInstance();
+        logger.info("/hello4,host:"+instance.getHost()+", service_id:"+instance.getServiceId());
+        User user = new User();
+        user.setName(name);
+        return user;
     }
 }
