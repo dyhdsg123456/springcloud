@@ -2,7 +2,6 @@ package com.example.demo.demo;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.actuate.metrics.CounterService;
 import org.springframework.cloud.client.ServiceInstance;
@@ -25,7 +24,7 @@ public class HelloController {
     @Autowired
     private        DiscoveryClient client;
 
-    @Qualifier("counterService")
+
     @Autowired
     private CounterService counterService;
 

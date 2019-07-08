@@ -5,10 +5,7 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 /**
@@ -36,6 +33,13 @@ public class HelloController2 {
         logger.info("/hello4,host:"+instance.getHost()+", service_id:"+instance.getServiceId());
         User user = new User();
         user.setName(name);
+        return user;
+    }
+    @RequestMapping(value = "users/{1}",method = RequestMethod.GET)
+    public User users(@PathVariable Long id){
+        System.out.println(id);
+        User user = new User();
+        user.setName("test");
         return user;
     }
 }
