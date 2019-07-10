@@ -35,11 +35,11 @@ public class HelloController2 {
         user.setName(name);
         return user;
     }
-    @RequestMapping(value = "users/{1}",method = RequestMethod.GET)
-    public User users(@PathVariable Long id){
-        System.out.println(id);
-        User user = new User();
-        user.setName("test");
-        return user;
-    }
+//    @RequestMapping(value = "users/{id}",method = RequestMethod.GET)
+//    public User users(@PathVariable Long id){
+//        System.out.println(id);
+//        User user = new User();
+//        user.setName("test");
+//        return user;
+//    }
 }

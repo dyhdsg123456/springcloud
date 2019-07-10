@@ -7,6 +7,14 @@ package com.example.demo;
  */
 
 public class User {
+    public User(){
+
+    }
+
+    public User(Long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
     private String name;
     private Long id;
 
@@ -23,5 +31,13 @@ public class User {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", id=" + id +
+                '}';
     }
 }
