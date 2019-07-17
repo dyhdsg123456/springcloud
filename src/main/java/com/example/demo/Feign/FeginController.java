@@ -1,5 +1,6 @@
-package com.example.demo.demo;
+package com.example.demo.Feign;
 
+import com.example.demo.demo.User;
 import org.springframework.web.bind.annotation.*;
 
 /**

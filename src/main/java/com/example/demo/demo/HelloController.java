@@ -9,6 +9,8 @@ import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Random;
+
 /**
  * @Author: dyh
  * @Date: 2018/5/10
@@ -33,10 +35,10 @@ public class HelloController {
 //
 //
         ServiceInstance instance = client.getLocalServiceInstance();
-//        int sleeptime = new Random().nextInt(3000);
-//        logger.info("sleeptime:"+sleeptime);
-//        Thread.sleep(sleeptime);
-        logger.info("/hello,host: "+instance.getHost()+",serviceid: "+instance.getPort());
+        int sleeptime = new Random().nextInt(3000);
+        logger.info("sleeptime:"+sleeptime);
+        Thread.sleep(sleeptime);
+        logger.info("/hello,host: "+instance.getHost()+",serviceid: "+instance.getServiceId());
 //        long end = System.currentTimeMillis();
 //        logger.info("spendtime:"+(end-start));
         return "hello world";
